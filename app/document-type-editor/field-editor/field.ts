@@ -6,6 +6,10 @@ export class Field {
         public isMultiValue: boolean
     )
     {}
+
+    clone(): Field {
+        return new Field(this.id, this.name, this.type, this.isMultiValue);
+    }
 }
 
 export enum FieldType {

@@ -1,12 +1,12 @@
 <form>
     <label for="name">Name</label>
-    <input type="text" name="name" [(ngModel)]="docType.name">
+    <input type="text" name="name" required [(ngModel)]="docType.name">
 
     <label for="group">Group</label>
-    <input type="text" name="group" [(ngModel)]="docType.group">
+    <input type="text" name="group" required [(ngModel)]="docType.group">
 
     <label for="category">Category</label>
-    <input type="text" name="category" [(ngModel)]="docType.category">
+    <input type="text" name="category" required [(ngModel)]="docType.category">
 
     <ul>
         <li *ngFor="let field of docType.fields" (click)="onFieldSelected(field)">{{field.name}}</li>

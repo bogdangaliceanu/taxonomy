@@ -1,9 +1,13 @@
-<form>
-    <label for="name">Name</label>
-    <input type="text" name="name">
+<form (ngSubmit)="onSave()" #fieldForm="ngForm">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" required [(ngModel)]="field.name">
+    </div>
+    <div>
+        <input type="checkbox" name="isMultiValue" [(ngModel)]="field.isMultiValue">
+        <label for="isMultiValue">Is multi-value</label>
+    </div>
 
-    <input type="checkbox" value="Is multi-value">
-
-    <button>Save</button>
-    <button>Cancel</button>
+    <button type="submit" [disabled]="!fieldForm.form.valid">Save</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
 </form>

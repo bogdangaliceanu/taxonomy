@@ -14,10 +14,10 @@ export class FieldEditorComponent {
     @Output() editComplete = new EventEmitter<EditResult<Field>>();
 
     onSave() {
-        this.editComplete.emit(new Saved(this.field));
+        this.editComplete.emit({ kind: 'Save', item: this.field });
     }
 
     onCancel() {
-        this.editComplete.emit(new Canceled());
+        this.editComplete.emit({ kind: 'Cancel' });
     }
 }

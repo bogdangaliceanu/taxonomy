@@ -16,7 +16,7 @@ export class DocumentTypeEditorComponent {
     fieldBeingEdited: Field;
 
     onFieldSelected(field: Field) {
-        this.fieldBeingEdited = field;
+        this.fieldBeingEdited = field.clone();
     }
 
     onEditComplete(result: EditResult<Field>) {

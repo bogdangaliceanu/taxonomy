@@ -1,9 +1,9 @@
-export class Saved<T> {
+export interface Saved<T> {
     kind: 'Save';
-    constructor(public item: T) {}
+    item: T;
 }
 
-export class Canceled {
+export interface Canceled {
     kind: 'Cancel';
 }
 
