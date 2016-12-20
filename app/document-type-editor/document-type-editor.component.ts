@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { DocumentType } from './document-type';
-import { Field, FieldType } from './field-editor/field';
+import { DocumentType, Field, FieldType } from '../model';
 import { EditResult } from './edit-result';
 
 @Component({
@@ -11,19 +10,27 @@ import { EditResult } from './edit-result';
     styleUrls: ['document-type-editor.component.css']
 })
 export class DocumentTypeEditorComponent {
-    docType = new DocumentType('g.c.d', 'd', 'g', 'c', [new Field('f', 'Registered Address', FieldType.Address, false)])
-
+    @Input() documentType: DocumentType;
+    @Output() editComplete = new EventEmitter<EditResult<DocumentType>>();
     fieldBeingEdited: Field;
 
     onFieldSelected(field: Field) {
         this.fieldBeingEdited = field.clone();
     }
 
-    onEditComplete(result: EditResult<Field>) {
+    onFieldEditComplete(result: EditResult<Field>) {
         if (result.kind === 'Save') {
-            const index = this.docType.fields.indexOf(this.fieldBeingEdited);
-            this.docType.fields.splice(index, 1, result.item);
+            const index = this.documentType.fields.indexOf(this.fieldBeingEdited);
+            this.documentType.fields.splice(index, 1, result.item);
         }
         this.fieldBeingEdited = null;
+    }
+
+    onSave() {
+        this.editComplete.emit({ kind: 'Save', item: this.documentType });
+    }
+
+    onCancel() {
+        this.editComplete.emit({ kind: 'Cancel' });
     }
 }

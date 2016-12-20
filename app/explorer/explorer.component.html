@@ -1,0 +1,3 @@
+<ul *ngIf="taxonomy">
+    <li *ngFor="let documentType of taxonomy.documentTypes" (click)="onDocumentTypeSelected(documentType)">{{documentType.name}}</li>
+</ul>

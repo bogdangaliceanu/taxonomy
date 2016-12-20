@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Field } from './field';
+import { Field } from '../../model';
 import { EditResult, Saved, Canceled } from '../edit-result';
 
 @Component({

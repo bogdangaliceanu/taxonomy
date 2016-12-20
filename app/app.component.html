@@ -1,1 +1,3 @@
-<document-type-editor></document-type-editor>
+<explorer [taxonomy]="taxonomy" (documentTypeSelected)="onDocumentTypeSelected($event)"></explorer>
+
+<document-type-editor *ngIf="documentTypeBeingEdited" [documentType]="documentTypeBeingEdited" (editComplete)="onDocumentTypeEditComplete($event)"></document-type-editor>

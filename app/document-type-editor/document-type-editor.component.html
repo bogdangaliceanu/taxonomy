@@ -1,22 +1,25 @@
-<form>
+<form (ngSubmit)="onSave()" #documentTypeForm="ngForm">
     <div>
         <label for="name">Name</label>
-        <input type="text" name="name" required [(ngModel)]="docType.name">
+        <input type="text" name="name" required [(ngModel)]="documentType.name">
     </div>
 
     <div>
         <label for="group">Group</label>
-        <input type="text" name="group" required [(ngModel)]="docType.group">
+        <input type="text" name="group" required [(ngModel)]="documentType.group">
     </div>
 
     <div>
         <label for="category">Category</label>
-        <input type="text" name="category" required [(ngModel)]="docType.category">
+        <input type="text" name="category" required [(ngModel)]="documentType.category">
     </div>
 
     <ul>
-        <li *ngFor="let field of docType.fields" (click)="onFieldSelected(field)">{{field.name}}</li>
+        <li *ngFor="let field of documentType.fields" (click)="onFieldSelected(field)">{{field.name}}</li>
     </ul>
 
-    <field-editor *ngIf="fieldBeingEdited" [field]="fieldBeingEdited" (editComplete)="onEditComplete($event)"></field-editor>
+    <button type="submit" [disabled]="!documentTypeForm.form.valid">Save</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+
+    <field-editor *ngIf="fieldBeingEdited" [field]="fieldBeingEdited" (editComplete)="onFieldEditComplete($event)"></field-editor>
 </form>
