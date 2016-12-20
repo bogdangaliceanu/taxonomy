@@ -5,3 +5,13 @@ form {
 .forbidden {
     cursor: not-allowed;
 }
+
+.field-list-item > .list-item-action {
+    display: none;
+}
+.field-list-item:hover > .list-item-action {
+    display: initial;
+}
+.list-item-action {
+    cursor: pointer;
+}

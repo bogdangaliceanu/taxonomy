@@ -10,7 +10,8 @@ export class TaxonomyService {
                 [
                     new DocumentType('g.c.d1', 'd1', 'g1', 'c1', new Field('type', 'g.c.d1.type', FieldType.Address, false), [
                         new Field('f1', 'Registered Address', FieldType.Address, false),
-                        new Field('f2', 'Entity Name', FieldType.Text, false)
+                        new Field('f2', 'Entity Name', FieldType.Text, false),
+                        new Field('f3', 'Signature', FieldType.Date, false)
                     ]),
                     new DocumentType('g.c.d2', 'd2', 'g2', 'c1', new Field('type', 'g.c.d2.type', FieldType.Address, false), [new Field('f', 'Registered Address', FieldType.Address, false)]),
                     new DocumentType('g.c.d3', 'd3', 'g2', 'c1', new Field('type', 'g.c.d3.type', FieldType.Address, false), [new Field('f', 'Registered Address', FieldType.Address, false)]),

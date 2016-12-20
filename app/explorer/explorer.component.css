@@ -1,0 +1,9 @@
+.document-type-list-item > .list-item-action {
+    display: none;
+}
+.document-type-list-item:hover > .list-item-action {
+    display: initial;
+}
+.list-item-action {
+    cursor: pointer;
+}

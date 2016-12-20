@@ -33,4 +33,17 @@ export class DocumentTypeEditorComponent {
     onCancel() {
         this.editComplete.emit({ kind: 'Cancel' });
     }
+
+    moveUp(field: Field) {
+
+    }
+
+    moveDown(field: Field) {
+
+    }
+
+    remove(field: Field) {
+        const index = this.documentType.fields.indexOf(field);
+        this.documentType.fields.splice(index, 1);
+    }
 }

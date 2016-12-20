@@ -15,7 +15,12 @@
     </div>
 
     <ul>
-        <li *ngFor="let field of documentType.fields" (click)="onFieldSelected(field)">{{field.name}}</li>
+        <li *ngFor="let field of documentType.fields; let first = first; let last = last" (click)="onFieldSelected(field)" class="field-list-item">
+            {{field.name}}
+            <span *ngIf="!first" (click)="moveUp(field)" class="list-item-action">↑</span>
+            <span *ngIf="!last" (click)="moveDown(field)" class="list-item-action">↓</span>
+            <span (click)="remove(field)" class="list-item-action">🗑</span>
+        </li>
     </ul>
 
     <button type="submit" [disabled]="!documentTypeForm.form.valid || fieldBeingEdited" [class.forbidden]="!documentTypeForm.form.valid || fieldBeingEdited">Save</button>
