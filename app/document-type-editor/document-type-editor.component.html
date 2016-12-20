@@ -15,8 +15,8 @@
     </div>
 
     <ul>
-        <li *ngFor="let field of documentType.fields; let first = first; let last = last" (click)="onFieldSelected(field)" class="field-list-item">
-            {{field.name}}
+        <li *ngFor="let field of documentType.fields; let first = first; let last = last" class="field-list-item">
+            <span (click)="onFieldSelected(field)">{{field.name}}</span>
             <span *ngIf="!first" (click)="moveUp(field)" class="list-item-action">↑</span>
             <span *ngIf="!last" (click)="moveDown(field)" class="list-item-action">↓</span>
             <span (click)="remove(field)" class="list-item-action">🗑</span>

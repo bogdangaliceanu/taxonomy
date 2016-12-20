@@ -35,11 +35,15 @@ export class DocumentTypeEditorComponent {
     }
 
     moveUp(field: Field) {
-
+        const index = this.documentType.fields.indexOf(field);
+        const swapWith = this.documentType.fields[index - 1];
+        this.documentType.fields.splice(index - 1, 2, field, swapWith);
     }
 
     moveDown(field: Field) {
-
+        const index = this.documentType.fields.indexOf(field);
+        const swapWith = this.documentType.fields[index + 1];
+        this.documentType.fields.splice(index, 2, swapWith, field);
     }
 
     remove(field: Field) {

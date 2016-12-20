@@ -1,5 +1,6 @@
-form {
+:host {
     border-top: solid 2px dodgerblue;
+    display: block;
 }
 
 .forbidden {

@@ -33,7 +33,7 @@ export class DocumentType {
     {}
 
     clone(): DocumentType {
-        return new DocumentType(this.id, this.name, this.group, this.category, this.typeField, this.fields);
+        return new DocumentType(this.id, this.name, this.group, this.category, this.typeField.clone(), this.fields.slice());
     }
 }
 

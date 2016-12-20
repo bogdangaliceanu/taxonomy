@@ -15,4 +15,9 @@ export class ExplorerComponent {
     onDocumentTypeSelected(documentType: DocumentType) {
         this.documentTypeSelected.emit(documentType);
     }
+
+    remove(documentType: DocumentType) {
+        const index = this.taxonomy.documentTypes.indexOf(documentType);
+        this.taxonomy.documentTypes.splice(index, 1);
+    }
 }
