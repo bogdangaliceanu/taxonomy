@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
     onDocumentTypeEditComplete(result: EditResult<DocumentType>) {
         if (result.kind === 'Save') {
-            const index = this.taxonomy.documentTypes.indexOf(this.documentTypeBeingEdited);
+            const index = this.taxonomy.documentTypes.findIndex(f => f.id === this.documentTypeBeingEdited.id);
             this.taxonomy.documentTypes.splice(index, 1, result.item);
         }
         this.documentTypeBeingEdited = null;

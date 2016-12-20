@@ -18,8 +18,8 @@
         <li *ngFor="let field of documentType.fields" (click)="onFieldSelected(field)">{{field.name}}</li>
     </ul>
 
-    <button type="submit" [disabled]="!documentTypeForm.form.valid">Save</button>
-    <button type="button" (click)="onCancel()">Cancel</button>
+    <button type="submit" [disabled]="!documentTypeForm.form.valid || fieldBeingEdited">Save</button>
+    <button type="button" [disabled]="fieldBeingEdited" (click)="onCancel()">Cancel</button>
 
     <field-editor *ngIf="fieldBeingEdited" [field]="fieldBeingEdited" (editComplete)="onFieldEditComplete($event)"></field-editor>
 </form>

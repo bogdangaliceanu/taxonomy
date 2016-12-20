@@ -20,7 +20,7 @@ export class DocumentTypeEditorComponent {
 
     onFieldEditComplete(result: EditResult<Field>) {
         if (result.kind === 'Save') {
-            const index = this.documentType.fields.indexOf(this.fieldBeingEdited);
+            const index = this.documentType.fields.findIndex(f => f.id === this.fieldBeingEdited.id);
             this.documentType.fields.splice(index, 1, result.item);
         }
         this.fieldBeingEdited = null;
