@@ -8,6 +8,6 @@
         <label for="isMultiValue">Is multi-value</label>
     </div>
 
-    <button type="submit" [disabled]="!fieldForm.form.valid">Save</button>
+    <button type="submit" [disabled]="!fieldForm.form.valid" [class.forbidden]="!fieldForm.form.valid">Save</button>
     <button type="button" (click)="onCancel()">Cancel</button>
 </form>
