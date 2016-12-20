@@ -1,6 +1,7 @@
 :host {
     border-top: solid 2px dodgerblue;
     display: block;
+    padding: 10px;
 }
 
 .forbidden {

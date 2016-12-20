@@ -1,6 +1,20 @@
 :host {
     border-top: solid 2px dodgerblue;
     display: block;
+    padding: 10px;
+}
+
+.field-list-item {
+    color: dodgerblue;
+    list-style-type: none;
+}
+
+.field-list-item .remove {
+    color: red;
+}
+
+.field-list-item .move {
+    color: green;
 }
 
 .forbidden {

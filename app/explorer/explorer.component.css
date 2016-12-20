@@ -1,6 +1,16 @@
 :host {
     border-top: solid 2px dodgerblue;
     display: block;
+    padding: 10px;
+}
+
+.document-type-list-item {
+    color: dodgerblue;
+    list-style-type: none;
+}
+
+.document-type-list-item .remove {
+    color: red;
 }
 
 .document-type-list-item > .list-item-action {
