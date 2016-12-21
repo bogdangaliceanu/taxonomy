@@ -11,11 +11,10 @@ import { Taxonomy, DocumentType } from '../model';
 export class ExplorerComponent {
     @Input() taxonomy: Taxonomy;
     @Output() documentTypeSelected = new EventEmitter<DocumentType>();
-    selectedDocumentType: DocumentType;
+    @Input() selectedDocumentType: DocumentType;
 
     onDocumentTypeSelected(documentType: DocumentType) {
         this.documentTypeSelected.emit(documentType);
-        this.selectedDocumentType = documentType;
     }
 
     remove(documentType: DocumentType) {

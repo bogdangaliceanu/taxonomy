@@ -9,7 +9,7 @@
 
 .field-list-item {
     color: dodgerblue;
-    list-style-type: none;
+    cursor: pointer;
 }
 
 .field-list-item .remove {
