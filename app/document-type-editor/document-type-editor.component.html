@@ -1,30 +1,34 @@
-<form (ngSubmit)="onSave()" #documentTypeForm="ngForm">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" required [(ngModel)]="documentType.name">
-    </div>
+<div class="document-type-details">
+    <h3>Document Type Details</h3>
 
-    <div>
-        <label for="group">Group</label>
-        <input type="text" name="group" required [(ngModel)]="documentType.group">
-    </div>
+    <form (ngSubmit)="onSave()" #documentTypeForm="ngForm">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" required [(ngModel)]="documentType.name">
+        </div>
 
-    <div>
-        <label for="category">Category</label>
-        <input type="text" name="category" required [(ngModel)]="documentType.category">
-    </div>
+        <div>
+            <label for="group">Group</label>
+            <input type="text" name="group" required [(ngModel)]="documentType.group">
+        </div>
 
-    <ul>
-        <li *ngFor="let field of documentType.fields; let first = first; let last = last" class="field-list-item">
-            <span (click)="onFieldSelected(field)">{{field.name}}</span>
-            <span *ngIf="!first" (click)="moveUp(field)" class="list-item-action move">↑</span>
-            <span *ngIf="!last" (click)="moveDown(field)" class="list-item-action move">↓</span>
-            <span (click)="remove(field)" class="list-item-action remove">🗑</span>
-        </li>
-    </ul>
+        <div>
+            <label for="category">Category</label>
+            <input type="text" name="category" required [(ngModel)]="documentType.category">
+        </div>
 
-    <button type="submit" [disabled]="!documentTypeForm.form.valid || fieldBeingEdited" [class.forbidden]="!documentTypeForm.form.valid || fieldBeingEdited">Save</button>
-    <button type="button" [disabled]="fieldBeingEdited" (click)="onCancel()">Cancel</button>
+        <ul>
+            <li *ngFor="let field of documentType.fields; let first = first; let last = last" class="field-list-item">
+                <span (click)="onFieldSelected(field)">{{field.name}}</span>
+                <span *ngIf="!first" (click)="moveUp(field)" class="list-item-action move">↑</span>
+                <span *ngIf="!last" (click)="moveDown(field)" class="list-item-action move">↓</span>
+                <span (click)="remove(field)" class="list-item-action remove">🗑</span>
+            </li>
+        </ul>
 
-    <field-editor *ngIf="fieldBeingEdited" [field]="fieldBeingEdited" (editComplete)="onFieldEditComplete($event)"></field-editor>
-</form>
+        <button type="submit" [disabled]="!documentTypeForm.form.valid || fieldBeingEdited" [class.forbidden]="!documentTypeForm.form.valid || fieldBeingEdited">Save</button>
+        <button type="button" [disabled]="fieldBeingEdited" (click)="onCancel()">Cancel</button>
+    </form>
+</div>
+
+<field-editor *ngIf="fieldBeingEdited" [field]="fieldBeingEdited" (editComplete)="onFieldEditComplete($event)"></field-editor>

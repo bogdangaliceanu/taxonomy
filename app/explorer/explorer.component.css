@@ -1,12 +1,15 @@
 :host {
+    border: solid 1px lightgrey;
     border-top: solid 2px dodgerblue;
+    border-radius: 3px;
     display: block;
     padding: 10px;
+    height: 96.5%;
+    overflow: auto;
 }
 
 .document-type-list-item {
     color: dodgerblue;
-    list-style-type: none;
 }
 
 .document-type-list-item .remove {
@@ -21,4 +24,13 @@
 }
 .list-item-action {
     cursor: pointer;
+}
+
+.selected-list-item {
+    font-weight: bold;
+    color: #00A65A;
+}
+
+h3 {
+    margin: 0px;
 }

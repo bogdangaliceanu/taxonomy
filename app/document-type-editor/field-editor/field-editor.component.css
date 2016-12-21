@@ -1,9 +1,15 @@
 :host {
+    border: solid 1px lightgrey;
     border-top: solid 2px dodgerblue;
+    border-radius: 3px;
     display: block;
     padding: 10px;
 }
 
 .forbidden {
     cursor: not-allowed;
+}
+
+h3 {
+    margin-top: 0px;
 }

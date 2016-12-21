@@ -1,7 +1,10 @@
 :host {
+    border: solid 1px lightgrey;
     border-top: solid 2px dodgerblue;
+    border-radius: 3px;
     display: block;
     padding: 10px;
+    height: 96.5%;
 }
 
 .field-list-item {
@@ -29,4 +32,16 @@
 }
 .list-item-action {
     cursor: pointer;
+}
+
+h3 {
+    margin-top: 0px;
+}
+
+.document-type-details {
+    float: left;
+}
+
+field-editor {
+    float: right;
 }

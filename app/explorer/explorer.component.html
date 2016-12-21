@@ -1,6 +1,8 @@
+<h3>Document Types</h3>
+
 <ul *ngIf="taxonomy">
     <li *ngFor="let documentType of taxonomy.documentTypes" class="document-type-list-item">
-        <span (click)="onDocumentTypeSelected(documentType)">{{documentType.name}}</span>
+        <span (click)="onDocumentTypeSelected(documentType)" [class.selected-list-item]="documentType === selectedDocumentType">{{documentType.name}}</span>
         <span (click)="remove(documentType)" class="list-item-action remove">🗑</span>
     </li>
 </ul>
