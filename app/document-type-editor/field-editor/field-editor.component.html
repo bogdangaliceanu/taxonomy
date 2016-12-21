@@ -1,11 +1,12 @@
 <h3>Edit Field</h3>
 
 <form (ngSubmit)="onSave()" #fieldForm="ngForm">
-    <div>
+    <div class="input-group">
         <label for="name">Name</label>
+        <br />
         <input type="text" name="name" required [(ngModel)]="field.name">
     </div>
-    <div>
+    <div class="input-group">
         <input type="checkbox" name="isMultiValue" [(ngModel)]="field.isMultiValue">
         <label for="isMultiValue">Is multi-value</label>
     </div>

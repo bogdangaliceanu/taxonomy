@@ -34,6 +34,11 @@
     cursor: pointer;
 }
 
+.selected-list-item {
+    font-weight: bold;
+    color: #00A65A;
+}
+
 h3 {
     margin-top: 0px;
 }
@@ -44,4 +49,8 @@ h3 {
 
 field-editor {
     float: right;
+}
+
+div.input-group {
+    margin: 5px 0px;
 }

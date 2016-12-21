@@ -2,24 +2,27 @@
     <h3>Document Type Details</h3>
 
     <form (ngSubmit)="onSave()" #documentTypeForm="ngForm">
-        <div>
+        <div class="input-group">
             <label for="name">Name</label>
+            <br />
             <input type="text" name="name" required [(ngModel)]="documentType.name">
         </div>
 
-        <div>
+        <div class="input-group">
             <label for="group">Group</label>
+            <br />
             <input type="text" name="group" required [(ngModel)]="documentType.group">
         </div>
 
-        <div>
+        <div class="input-group">
             <label for="category">Category</label>
+            <br />
             <input type="text" name="category" required [(ngModel)]="documentType.category">
         </div>
 
         <ul>
             <li *ngFor="let field of documentType.fields; let first = first; let last = last" class="field-list-item">
-                <a (click)="onFieldSelected(field)">{{field.name}}</a>
+                <a (click)="onFieldSelected(field)" [class.selected-list-item]="fieldBeingEdited && field.id === fieldBeingEdited.id">{{field.name}}</a>
                 <a *ngIf="!first" (click)="moveUp(field)" class="list-item-action move">↑</a>
                 <a *ngIf="!last" (click)="moveDown(field)" class="list-item-action move">↓</a>
                 <a (click)="remove(field)" class="list-item-action remove">🗑</a>
