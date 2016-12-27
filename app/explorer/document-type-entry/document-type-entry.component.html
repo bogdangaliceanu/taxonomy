@@ -1,0 +1,6 @@
+<span *ngFor="let fragment of entry.nameFragments"
+      [class.start-of-word]="fragment.isStartOfWord"
+      [class.end-of-word]="fragment.isEndOfWord"
+      [class.highlighted]="fragment.isHighlighted">
+      {{fragment.text}}
+</span>

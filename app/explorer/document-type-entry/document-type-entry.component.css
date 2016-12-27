@@ -1,0 +1,21 @@
+.highlighted {
+    background-color: yellow;
+    --margin-compensation: -0.25em;
+}
+.highlighted.start-of-word {
+    margin-right: var(--margin-compensation);
+}
+.highlighted.end-of-word {
+    margin-left: var(--margin-compensation);
+}
+.highlighted.start-of-word.end-of-word {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.highlighted:not(.start-of-word):not(.end-of-word) {
+    margin-right: var(--margin-compensation);
+    margin-left: var(--margin-compensation);
+}
+.highlighted + .highlighted {
+    margin-left: 0px;
+}

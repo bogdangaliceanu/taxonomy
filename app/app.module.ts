@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DocumentTypeEditorComponent } from './document-type-editor/document-type-editor.component';
 import { FieldEditorComponent } from './document-type-editor/field-editor/field-editor.component';
 import { ExplorerComponent } from './explorer/explorer.component';
+import { DocumentTypeEntryComponent } from './explorer/document-type-entry/document-type-entry.component';
 import { TaxonomyService } from './taxonomy-service';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TaxonomyService } from './taxonomy-service';
         AppComponent,
         DocumentTypeEditorComponent,
         FieldEditorComponent,
-        ExplorerComponent
+        ExplorerComponent,
+        DocumentTypeEntryComponent
     ],
     bootstrap: [ AppComponent ],
     providers: [ TaxonomyService ]

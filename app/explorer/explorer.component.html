@@ -1,8 +1,10 @@
 <h3>Document Types</h3>
 
+<input type="text" placeholder="Search by name" #searchBox (keyup)="onSearchTermChanged(searchBox.value)">
+
 <ul *ngIf="taxonomy">
-    <li *ngFor="let documentType of taxonomy.documentTypes" class="document-type-list-item">
-        <a (click)="onDocumentTypeSelected(documentType)" [class.selected-list-item]="selectedDocumentType && documentType.id === selectedDocumentType.id">{{documentType.name}}</a>
+    <li *ngFor="let entry of entries" class="document-type-list-item">
+        <document-type-entry [entry]="entry" (click)="onDocumentTypeSelected(entry.documentType)" [class.selected-list-item]="selectedDocumentType && entry.documentType.id === selectedDocumentType.id"></document-type-entry>
         <a (click)="remove(documentType)" class="list-item-action remove">🗑</a>
     </li>
 </ul>
