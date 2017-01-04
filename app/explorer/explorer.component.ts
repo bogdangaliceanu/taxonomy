@@ -61,7 +61,7 @@ class SearchService {
     }
 
     private static findIntervals(termLower: string, docTypeNameLower: string): Interval[] {
-        const intervals = [];
+        const intervals: Interval[] = [];
         let index = docTypeNameLower.indexOf(termLower);
         while (index >= 0) {
             intervals.push(new Interval(index, index + termLower.length));

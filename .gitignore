@@ -11,3 +11,4 @@ _test-output
 _temp
 .editorconfig
 .vscode/
+*.metadata.json

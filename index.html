@@ -15,6 +15,14 @@
 
     <script src="systemjs.config.js"></script>
     <script>
+      document.locale = 'ro';
+
+      System.config({
+        map: {
+          text: 'systemjs-text-plugin.js'
+        }
+      });
+
       System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>

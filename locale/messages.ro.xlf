@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5d7298d787d357c4de7e9ac09b9eefdb75edb1c9" datatype="html">
+        <source>Document Types</source>
+        <target>Tipuri de documente</target>
+        <note priority="1" from="description">The explorer header</note>
+        <note priority="1" from="meaning">Document types are being enumerated</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
